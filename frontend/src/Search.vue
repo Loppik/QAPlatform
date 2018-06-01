@@ -1,6 +1,6 @@
 <template>
   <div id="search">
-    <img src="./assets/logo.png">
+    <img src="./assets/qa-logo.svg">
     <h2>{{ msg }}</h2>
     <input type="text" name="" v-model="mess" placeholder="Enter your question here..." id="search-input"  @keyup.13="clear">
     <p style="margin-top:10px;">{{ mess }}</p>
@@ -54,12 +54,12 @@ h2{
   width: 80%;
   margin-top: 40px;
   border: none;
-  border-bottom: 2px solid #41b883;
+  border-bottom: 2px solid #8ae1fc;
   transition: .7s;
 }
 
 #search-input:focus{
-  border-bottom: 2px solid #2c3e50;
+  border-bottom: 2px solid #48b8d0;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

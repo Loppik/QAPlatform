@@ -1,22 +1,12 @@
 <template>
   <div id="footer">
-    <div class="contact">
-      <img src="./assets/logo.gif" alt="" width="50%">
-      <p>Contact us:<br>example@email.com<br>example2@email.com</p>
-    </div>
-    <div class="about">
-      <div class="sanya block">
-          <img src="./assets/WV5j-3x12fg.gif" alt="" width="140px" class="round">
-        <p>Alexander Shantyr</p>
-
-      </div>
-      <div class="antoha block">
-        <img src="./assets/lxVZTGM_4to.gif" alt="" width="140px" class="round">
-        <p>Anton Mordik</p>
+      <div class="block">
+        <h2 style="color: #fff; margin-bottom: 10px;">Follow us:</h2>
+        <img src="./assets/github.svg" class="change"/>
+        <img src="./assets/github.svg" class="change"/>
       </div>
     </div>
 
-  </div>
 </template>
 
 <script>
@@ -34,13 +24,12 @@ export default {
 #footer {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   width: 100%;
-  height: 400px;
-  background-color: #41b883;
+  background: linear-gradient(90deg, #8ae1fc, #48b8d0);
   color: #2c3e50;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 1fr 5fr 5fr 1fr;
-  grid-template-rows: 1fr 320px 1fr;
+  grid-template-columns: 1fr 400px 1fr;
+  grid-template-rows: 10px 1fr 10px;
 }
 
 .about{
@@ -73,40 +62,35 @@ export default {
 }
 
 .block{
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 150px 1fr;
-  grid-auto-rows: 1fr;
-  margin: 10px;
+  grid-column: 2;
+  grid-row: 2;
+  margin: auto;
   border-radius: 70px;
   transition: .7s;
 }
 
-.block:hover{
-  background-color: #2c3e50;
-  color: white;
-}
-
+  .sanya{
+    grid-column: 2;
+  }
+  
+  .antoha{
+    grid-column: 3;
+  }
+  
+  .change{
+    grid-row: 3;
+    margin: auto;
+    transition: .7s;
+    border-radius: 70px;
+  }
+  
+  .change:hover{
+    background-color: #48b8d0;
+  }
+  
 .round{
   border-radius: 70px;
   /* background-image: url('./assets/WV5j-3x12fg.gif'); */
 }
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>

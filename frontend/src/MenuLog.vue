@@ -1,6 +1,6 @@
 <template>
   <div id="menu">
-    <h1 style="grid-column: 2">{{ msg }}</h1>
+    <h1 style="grid-column: 2; color: #fff;">{{ msg }}</h1>
     <div class="sign log-out">
       {{ logout }}
     </div>
@@ -15,7 +15,7 @@ export default {
   name: 'menu-log',
   data () {
     return {
-      msg: 'Stack Overflow v2.0',
+      msg: 'Q&A platform',
       logout: 'Log out',
       profile: 'Profile'
     }
@@ -31,7 +31,7 @@ export default {
 
 #menu {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  background-color: #41b883;
+  background: linear-gradient(90deg, #8ae1fc, #48b8d0);
   color: #2c3e50;
   width: 100%;
   padding-top: 10px;

@@ -1,7 +1,7 @@
 <template>
   <div>
   <div id="menu">
-    <h1 style="grid-column: 2">{{ msg }}</h1>
+    <h1 style="grid-column: 2; color: #fff;">{{ msg }}</h1>
     <div class="sign sign-in" @click="changeShowLog" v-if="!showR">
       {{ signin }}
     </div>
@@ -28,7 +28,7 @@ export default {
   name: 'menu',
   data () {
     return {
-      msg: 'Stack Overflow v2.0',
+      msg: 'Q&A platform',
       signin: 'Sign in',
       signup: 'Sign up',
       showR: false,
@@ -72,7 +72,7 @@ export default {
 
 #menu {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  background-color: #41b883;
+  background: linear-gradient(90deg, #8ae1fc, #48b8d0);
   position: fixed;
   top: 0;
   color: #2c3e50;
@@ -88,6 +88,7 @@ export default {
 
 .sign{
   text-align: center;
+  color: white;
   padding-top: 10px;
   cursor: pointer;
   border-radius: 40px;
@@ -95,8 +96,8 @@ export default {
 }
 
 .sign:hover{
-  background-color: #2c3e50;
-  color: white;
+  color: #48b8d0;
+  background-color: #fff;
 }
 
 .sign-in{
