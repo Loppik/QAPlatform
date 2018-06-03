@@ -22,7 +22,6 @@ export default {
   data () {
     return {
       msg: 'This page is based on Vue.js',
-//      nickname: 'Administrator',
       yearActivity: 215,
       mounthActivity: 47,
       dayActivity: 3
@@ -36,15 +35,14 @@ export default {
 #avatar{
   width: 200px;
   height: 200px;
-  background-image: url('./assets/ava.gif');
-
+  background-image: url('./assets/user.svg');
 }
 
 #info {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #48b8d0;
   width: 100%;
   height: calc(100vh - 94px);
   margin-top: 94px;
@@ -58,10 +56,6 @@ export default {
   transition: .7s;
 }
 
-.card:hover{
-  background-color: #2c3e50;
-  color: white;
-}
 
 .activity{
   margin: auto;
@@ -80,7 +74,7 @@ export default {
 
 
 .activity p:hover{
-  background-color: #2c3e50;
+  background-color: #48b8d0;
   color: white;
 }
 

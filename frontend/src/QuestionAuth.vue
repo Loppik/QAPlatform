@@ -3,7 +3,7 @@
     <div id="question-container">
       <h2 id="quest">{{ question }}</h2>
       <div id="best">
-        <img src="./assets/star.png">
+        <img src="./assets/star.svg">
         <h3 style="text-align: left; padding-top: 7px;">{{ bestAnswer.nickname }} : {{ bestAnswer.answer }}</h3>
       </div>
       
@@ -35,16 +35,6 @@ export default {
 </script>
 
 <style>
-#question-non {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  width: 100%;
-  height: calc(100vh - 94px);
-  margin-top: 94px;
-}
 
 #question-container{
   width: 70%;
@@ -58,18 +48,12 @@ export default {
   grid-template-columns: 1fr;*/
 }
 
-#quest{
-  background-color: #41b883;
-  color: #2c3e50;
-  padding-bottom: 5px;
-}
-
 #best{
   display: grid;
   grid-template-columns: 42px 1fr;
   grid-gap: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #2c3e50;
+  border-bottom: 1px solid #48b8d0;
 }
 
 h1{
@@ -103,12 +87,13 @@ h1{
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;
-  border-bottom: 2px solid #41b883;
+  border-bottom: 2px solid #e2e2e2;
   transition: .7s;
 }
 
 #answer-input:focus{
-  border-bottom: 2px solid #2c3e50;
+  color: #48b8d0;
+  border-bottom: 2px solid #8ae1fc;
 }
 
 </style>

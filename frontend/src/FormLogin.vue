@@ -1,7 +1,7 @@
 <template>
   <div id="formreg" v-if="show">
     <div class="container-form">
-      <h2 style="color: #2c3e50">{{ msg }}</h2>
+      <h2 style="color: #fff">{{ msg }}</h2>
       <input type="text" name="" value="" placeholder="Login" id="login-input">
       <input type="password" name="" value="" placeholder="Password" id="pass-input">
       <div id="log-btn">Log In</div>
@@ -37,7 +37,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   background: linear-gradient(90deg, #8ae1fc, #48b8d0);
-  color: #2c3e50;
+  color: #fff;
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -66,7 +66,7 @@ h1{
   padding: 10px;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid #2c3e50;
+  border-bottom: 2px solid #fff;
   transition: .7s;
 }
 
@@ -86,20 +86,21 @@ h1{
 }
 
 #log-btn:hover{
-  background-color: #2c3e50;
-  color: white;
+  background-color: #fff;
+  color: #48b8d0;
 
 }
 
 #login-input:focus, #pass-input:focus, #email-input:focus{
   background-color: white;
+  color: #48b8d0;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #2c3e50;
+  color: #48b8d0;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #2c3e50;
+  color: #48b8d0;
 }
 
 </style>
