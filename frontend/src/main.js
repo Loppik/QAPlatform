@@ -6,13 +6,25 @@ import Footer from './Footer.vue'
 import Info from './Info.vue'
 import FormReg from './FormReg.vue'
 import FormLogin from './FormLogin.vue'
-import QuestionNonAuth from './QuestionNonAuth.vue'
-import QuestionAuth from './QuestionAuth.vue'
+import QNonAuth from './QNonAuth.vue'
+import QAuth from './QAuth.vue'
 import Cp from './Cp.vue'
+import Question from './Question.vue'
+import QuestionA from './QuestionA.vue'
 
 new Vue({
   el: '#cp',
   render: h => h(Cp)
+})
+
+new Vue({
+  el: '#question',
+  render: h => h(Question)
+})
+
+new Vue({
+  el: '#question-a',
+  render: h => h(QuestionA)
 })
 
 new Vue({
@@ -52,10 +64,10 @@ new Vue({
 
 new Vue({
   el: '#question-non',
-  render: h => h(QuestionNonAuth)
+  render: h => h(QNonAuth)
 })
 
 new Vue({
   el: '#question-auth',
-  render: h => h(QuestionAuth)
+  render: h => h(QAuth)
 })

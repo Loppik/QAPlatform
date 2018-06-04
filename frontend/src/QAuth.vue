@@ -1,5 +1,5 @@
 <template>
-  <div id="question-non">
+  <div id="question-auth">
     <div id="question-container">
       <h2 id="quest">{{ question }}</h2>
       <div id="best">
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'question-non',
+  name: 'question-auth',
   data () {
     return {
       question: 'Example question????',
@@ -35,6 +35,17 @@ export default {
 </script>
 
 <style>
+  
+  #question-auth {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #48b8d0;
+  width: 100%;
+  height: calc(100vh - 94px);
+  margin-top: 94px;
+}
 
 #question-container{
   width: 70%;
@@ -54,7 +65,7 @@ export default {
   grid-gap: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #48b8d0;
-}
+}x
 
 h1{
   font-weight: normal;
