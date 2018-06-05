@@ -2,8 +2,8 @@
   <div id="footer">
       <div class="block">
         <h2 style="color: #fff; margin-bottom: 10px;">Follow us:</h2>
-        <img src="./assets/github.svg" class="change"/>
-        <img src="./assets/github.svg" class="change"/>
+        <a href=""><img src="./assets/github.svg" class="change"/></a>
+        <a href=""><img src="./assets/github.svg" class="change"/></a>
       </div>
     </div>
 

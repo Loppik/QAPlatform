@@ -2,26 +2,48 @@
   <div id="formreg" v-if="show">
     <div class="container-form">
       <h2 style="color: #fff">{{ msg }}</h2>
-      <input type="text" name="" value="" placeholder="Login" id="login-input">
-      <input type="password" name="" value="" placeholder="Password" id="pass-input">
-      <div id="log-btn">Log In</div>
+      <input type="text" name="" value="" placeholder="Login" id="login-input" v-model="login">
+      <input type="password" name="" value="" placeholder="Password" id="pass-input" v-model="password">
+      <div id="log-btn" @click="httpReq()">Log In</div>
     </div>
   </div>
 </template>
 
 <script>
+  import axios from 'axios';
+  
 export default {
   name: 'search',
   data () {
     return {
       msg: 'Authorization:',
-      show: true
+      show: true,
+      someData: '',
+      login:'',
+      password: ''
     }
   },
   methods:{
-    changeShow () {
-    }
+    httpReq () {
+      let data = {
+        login: this.login,
+        password: this.password
+      };
+      alert(data);
+      axios.get('http://localhost:8081/asd').then((response) => {
+        this.someData = response.data;
+      }).catch(e => {
+        alert(e);
+      });
+      axios.post('http://localhost:8081/q', data).then((response) => {
+        alert(response.data);
+//        this.someData = response.data;
+      }).catch(e => {
+        alert(e);
+      });
+      alert("succes");
   }
+}
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="menu">
+  <div id="menu-log">
     <h1 style="grid-column: 2; color: #fff;">{{ msg }}</h1>
     <div class="sign log-out">
       {{ logout }}
@@ -29,7 +29,7 @@ export default {
   padding: 0;
 }
 
-#menu {
+#menu-log {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   background: linear-gradient(90deg, #8ae1fc, #48b8d0);
   color: #2c3e50;
