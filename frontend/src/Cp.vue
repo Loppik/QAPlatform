@@ -1,8 +1,8 @@
 <template>
   <div id="cp">
-    <menu-log></menu-log>
-    <info v-bind:nickname="nickname"></info>
-    <foot></foot>
+    <menu-log/>
+    <info v-bind:nickname="nickname" v-bind:password="password" v-bind:question="question" v-bind:answers="answers" v-bind:bestAnswer="bestAnswer" v-bind:statistic="statistic"/>
+    <foot/>
   </div>
 </template>
 
@@ -16,9 +16,9 @@
     name: 'cp',
     data () {
       return {
-        nickname: 'NICKNAME',
       }
     },
+    props: ['nickname', 'password', 'question', 'answers', 'bestAnswer', 'statistic'],
     methods:{
       
     },

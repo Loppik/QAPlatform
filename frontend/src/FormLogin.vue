@@ -1,10 +1,10 @@
 <template>
-  <div id="formreg" v-if="show">
+  <div id="formreg" v-if="showL">
     <div class="container-form">
       <h2 style="color: #fff">{{ msg }}</h2>
       <input type="text" name="" value="" placeholder="Login" id="login-input" v-model="login">
       <input type="password" name="" value="" placeholder="Password" id="pass-input" v-model="password">
-      <div id="log-btn" @click="httpReq()">Log In</div>
+      <div id="log-btn" @click="sendLogin">Log In</div>
     </div>
   </div>
 </template>
@@ -17,31 +17,14 @@ export default {
   data () {
     return {
       msg: 'Authorization:',
-      show: true,
-      someData: '',
-      login:'',
-      password: ''
     }
   },
+  props: ['nickname', 'password', 'showL'],
   methods:{
-    httpReq () {
-      let data = {
-        login: this.login,
-        password: this.password
-      };
-      alert(data);
-      axios.get('http://localhost:8081/asd').then((response) => {
-        this.someData = response.data;
-      }).catch(e => {
-        alert(e);
-      });
-      axios.post('http://localhost:8081/q', data).then((response) => {
-        alert(response.data);
-//        this.someData = response.data;
-      }).catch(e => {
-        alert(e);
-      });
-      alert("succes");
+    sendLogin () {
+      this.$emit('transferNick', 'nickname', this.nickname);
+      this.$emit('transferPass', 'password', this.password);
+      this.showL = false;
   }
 }
 }
@@ -68,6 +51,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 50% 1fr;
   animation: start 1s easy-in;
+  z-index: 150;
 }
 
 h1{

@@ -1,7 +1,7 @@
 <template>
   <div id="question-a">
     <men/>
-    <quest/>
+    <quest v-bind:nickname="nickname" v-bind:password="password" v-bind:question="question" v-bind:answers="answers" v-bind:bestAnswer="bestAnswer" v-bind:statistic="statistic"/>
     <foot/>
   </div>
 </template>
@@ -15,16 +15,17 @@ export default {
   name: 'question-a',
   data () {
     return {
-      question: 'Example question????',
-      nickname: 'NICKNAME',
+//      question: 'Example question????',
+//      nickname: 'NICKNAME',
       userAnswer: '',
-      bestAnswer: {nickname:'sanyaShantyr', answer:'Some clever answer'},
-      otherAnswers: [{nickname:'adm1', answer:'Stupid answer 1'}, {nickname:'adm2', answer:'Stupid answer 2'}]
+//      bestAnswer: {nickname:'sanyaShantyr', answer:'Some clever answer'},
+//      otherAnswers: [{nickname:'adm1', answer:'Stupid answer 1'}, {nickname:'adm2', answer:'Stupid answer 2'}]
     }
   },
+  props: ['nickname', 'password', 'question', 'answers', 'bestAnswer', 'statistic'],
   methods:{
     appendAnswer () { 
-                      this.otherAnswers.push({nickname:this.nickname, answer:this.userAnswer});
+                      this.answers.push({nickname:this.nickname, answer:this.userAnswer});
                       this.userAnswer = null;
                     }
   },

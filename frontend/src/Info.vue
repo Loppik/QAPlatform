@@ -3,14 +3,14 @@
     <div class="card">
       <div id="avatar">
       </div>
-      <div class="nickname">
+      <div class="nick">
         {{ nickname }}
       </div>
     </div>
     <div class="activity">
-      <p>This year activity: {{ yearActivity }} answers</p>
-      <p>This mounth activity: {{ mounthActivity }} answers</p>
-      <p>This day activity: {{ dayActivity }} answers</p>
+      <p>This year activity: {{ statistic[0] }} answers</p>
+      <p>This mounth activity: {{ statistic[1] }} answers</p>
+      <p>This day activity: {{ statistic[2] }} answers</p>
     </div>
   </div>
 </template>
@@ -21,13 +21,12 @@ export default {
   name: 'search',
   data () {
     return {
-      msg: 'This page is based on Vue.js',
-      yearActivity: 215,
-      mounthActivity: 47,
-      dayActivity: 3
+//      yearActivity: 215,
+//      mounthActivity: 47,
+//      dayActivity: 3
     }
   },
-  props: ['nickname']
+  props: ['nickname', 'password', 'question', 'answers', 'bestAnswer', 'statistic'],
 }
 </script>
 
@@ -44,22 +43,27 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #48b8d0;
   width: 100%;
-  height: calc(100vh - 94px);
-  margin-top: 94px;
+  height: 100vh;
   text-align: center;
 }
 .card{
   width: 200px;
-  margin: auto;
+  position: absolute;
+  top: 20%;
+  left: calc(50% - 100px);
   padding-bottom: 15px;
   border-radius: 30px;
   transition: .7s;
 }
-
+  .nick{
+    color: #48b8d0;
+  }
 
 .activity{
   margin: auto;
-  margin-top: 30px;
+  position: absolute;
+  top: calc(20% + 250px);
+  left: calc(50% - 250px);
   width: 500px;
   display: grid;
   grid-template-rows: 50px 50px 50px;

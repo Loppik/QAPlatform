@@ -1,33 +1,33 @@
 <template>
-  <div id="question-auth">
+  <div id="q-auth">
     <div id="question-container">
       <h2 id="quest">{{ question }}</h2>
       <div id="best">
         <img src="./assets/star.svg">
-        <h3 style="text-align: left; padding-top: 7px;">{{ bestAnswer.nickname }} : {{ bestAnswer.answer }}</h3>
+        <h3 style="text-align: left; padding-top: 7px;">{{ answers[0].nickname }} :  {{ answers[0].answer}}</h3>
       </div>
       
       <input type="text" placeholder="Enter your answer here..." id="answer-input" v-model="userAnswer" @keyup.13="appendAnswer">
-      <p class="other" v-for="q in otherAnswers">{{ q.nickname }} : {{ q.answer }}</p>
+      <p class="other" v-for="q in answers">{{ q.nickname }} : {{ q.answer }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'question-auth',
+  name: 'q-auth',
   data () {
     return {
-      question: 'Example question????',
-      nickname: 'NICKNAME',
+      answers:[],
+//      question: 'Example question????',
+//      nickname: 'NICKNAME',
       userAnswer: '',
-      bestAnswer: {nickname:'sanyaShantyr', answer:'Some clever answer'},
-      otherAnswers: [{nickname:'adm1', answer:'Stupid answer 1'}, {nickname:'adm2', answer:'Stupid answer 2'}]
     }
   },
+  props: ['nickname', 'password', 'question',  'answers', 'statistic'],
   methods:{
     appendAnswer () { 
-                      this.otherAnswers.push({nickname:this.nickname, answer:this.userAnswer});
+                      this.answers.push({nickname:this.nickname, answer:this.userAnswer});
                       this.userAnswer = null;
                     }
   }
@@ -36,27 +36,14 @@ export default {
 
 <style>
   
-  #question-auth {
+  #q-auth {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #48b8d0;
   width: 100%;
-  height: calc(100vh - 94px);
-  margin-top: 94px;
-}
-
-#question-container{
-  width: 70%;
-  height: 70%;
-  overflow-y: scroll;
-/*  overflow-x: hidden;*/
-  margin: auto;
-  margin-top: 10%; 
-  /*display: grid;
-  grid-template-rows: 50px 60px 1fr;
-  grid-template-columns: 1fr;*/
+  height: 100vh;
 }
 
 #best{
@@ -94,7 +81,7 @@ h1{
   padding: 10px;
   font-size: 1.2em;
   color: #2c3e50;
-  width: 97.7%;
+  width: 97%;
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;

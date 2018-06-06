@@ -30,6 +30,7 @@ export default {
 }
 
 #menu-log {
+  position: fixed;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   background: linear-gradient(90deg, #8ae1fc, #48b8d0);
   color: #2c3e50;
@@ -41,6 +42,7 @@ export default {
   grid-gap: 20px;
   grid-template-columns: 1fr 8fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
+  z-index: 100;
 }
 
 .sign{

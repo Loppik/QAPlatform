@@ -11,10 +11,10 @@
   </div>
   <transition name="fade">
     <div v-if="showR">
-      <reg></reg>
+      <reg/>
     </div>
     <div v-if="showL">
-      <log></log>
+      <log v-bind:nickname="nickname" v-bind:password="password" v-bind:showL="showL" />
     </div>
   </transition>
   </div>
@@ -42,16 +42,22 @@ export default {
   methods:{
     changeShowReg () { this.showR = !this.showR;
                     if (this.showR) {
-                      this.signup = "Cansel";
+                      this.signup = "Cancel";
                     } else{
                       this.signup = "Sign up";
                     }},
     changeShowLog () { this.showL = !this.showL;
                       if (this.showL) {
-                        this.signin = "Cansel";
+                        this.signin = "Cancel";
                       }else{
                         this.signin = "Sign in";
-                      }}
+                      }},
+    transferNickFunc: function (value, nickname) {
+      alert(value, nickname);
+    },
+    transferPassFunc: function (value, password) {
+      alert(value, password);
+    }
   }
 
 }
@@ -66,7 +72,7 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition: opacity .7s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+.fade-enter, .fade-leave-to{
   opacity: 0;
 }
 

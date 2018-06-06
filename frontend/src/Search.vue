@@ -1,9 +1,11 @@
 <template>
   <div id="search">
-    <img src="./assets/qa-logo.svg">
-    <h2>{{ msg }}</h2>
-    <input type="text" name="" v-model="mess" placeholder="Enter your question here..." id="search-input"  @keyup.13="clear">
-    <p style="margin-top:10px;">{{ mess }}</p>
+    <div style="position: absolute; top: 15%; width: 80%; left: 10%">
+      <img src="./assets/qa-logo.svg">
+      <h2>{{ msg }}</h2>
+      <input type="text" name="" v-model="mess" placeholder="Enter your question here..." id="search-input"  @keyup.13="clear">
+      <p style="margin-top:10px;">{{ mess }}</p>
+    </div>
   </div>
 </template>
 
@@ -32,8 +34,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   width: 100%;
-  height: calc(100vh - 94px);
-  margin-top: 94px;
+  height: 100vh;
 }
 
 h1{

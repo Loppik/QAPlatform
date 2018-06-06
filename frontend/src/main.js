@@ -9,12 +9,19 @@ import FormLogin from './FormLogin.vue'
 import QNonAuth from './QNonAuth.vue'
 import QAuth from './QAuth.vue'
 import Cp from './Cp.vue'
+import Index from './Index.vue'
 import Question from './Question.vue'
 import QuestionA from './QuestionA.vue'
+import App from './App.vue'
 
 new Vue({
   el: '#cp',
   render: h => h(Cp)
+})
+
+new Vue({
+  el: '#index',
+  render: h => h(Index)
 })
 
 new Vue({
@@ -68,6 +75,13 @@ new Vue({
 })
 
 new Vue({
-  el: '#question-auth',
+  el: '#q-auth',
   render: h => h(QAuth)
 })
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+})
+
+Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
