@@ -35,6 +35,7 @@ export default {
   color: #2c3e50;
   width: 100%;
   height: 100vh;
+  z-index: 0;
 }
 
 h1{

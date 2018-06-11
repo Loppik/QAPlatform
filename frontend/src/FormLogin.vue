@@ -22,8 +22,8 @@ export default {
   props: ['nickname', 'password', 'showL'],
   methods:{
     sendLogin () {
-      this.$emit('transferNick', 'nickname', this.nickname);
-      this.$emit('transferPass', 'password', this.password);
+//      this.$emit('transferNick', 'nickname', this.nickname);
+//      this.$emit('transferPass', 'password', this.password);
       this.showL = false;
   }
 }

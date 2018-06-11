@@ -1,7 +1,15 @@
 <template>
   <div id="app">
-    <menu-non v-if="!reg" />
-    <menu-log v-else />
+    <div id="menu-log" v-if="reg">
+      <h1 style="grid-column: 2; color: #fff;">{{ msg }}</h1>
+      <div class="sign log-out">
+        {{ logout }}
+      </div>
+      <div class="sign profile">
+        {{ profile }}
+      </div>
+    </div>
+    
     <search v-if="page == 0" />
     <q-auth v-if="reg && page == 1" v-bind:nickname="nickname" v-bind:question="question" v-bind:answers="answers"/>
     <q-non v-if="!reg && page == 1" v-bind:answers="answers" />
@@ -16,6 +24,33 @@
         </div>
       </transition>
     </div>
+    
+    <div id="new-quest" v-if="reg">
+      + Add question
+    </div>
+    
+    
+    
+    <div id="menu" v-if="!reg">
+      <h1 style="grid-column: 2; color: #fff;">{{ msg }}</h1>
+      <div class="sign sign-in" @click="changeShowLog" v-if="!showR">
+        {{ signin }}
+      </div>
+      <div class="sign sign-up" @click="changeShowReg" v-if="!showL">
+        {{ signup }}
+      </div>
+    </div>
+    
+    
+    
+    <transition name="fade">
+      <div v-if="showR">
+        <form-reg/>
+      </div>
+      <div v-if="showL">
+        <form-login v-bind:nickname="nickname" v-bind:password="password" v-bind:showL="showL" />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -39,6 +74,15 @@
     name: 'app',
     data () {
       return {
+        msg: 'Q&A platform',
+        signin: 'Sign in',
+        signup: 'Sign up',
+        showR: false,
+        showL: false,
+        
+        logout: 'Log out',
+        profile: 'Profile',
+        
         reg: true,
         page: 0,
         nickname: 'admin',
@@ -51,6 +95,18 @@
       }
     },
     methods:{
+      changeShowReg () { this.showR = !this.showR;
+                    if (this.showR) {
+                      this.signup = "Cancel";
+                    } else{
+                      this.signup = "Sign up";
+                    }},
+      changeShowLog () { this.showL = !this.showL;
+                      if (this.showL) {
+                        this.signin = "Cancel";
+                      }else{
+                        this.signin = "Sign in";
+                      }},
       setPage1(){
         this.page = 0;
       },
@@ -68,7 +124,7 @@
       'menu-non': Menu,
       'menu-log': MenuLog,
       'form-login':FormLogin,
-      'forn-reg':FormReg,
+      'form-reg':FormReg,
       'search':Search,
       'foot':Footer,
       'info':Info,
@@ -106,6 +162,27 @@
     background-color: white;
   }
   
+  #new-quest{
+    color: #48b8d0;
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    font-size: 1.1em;
+    padding: 15px;
+    border-radius: 50px;
+    background-color: white;
+    cursor: pointer;
+    transition: .7s;
+    border-bottom: 2px solid white;
+    box-shadow: 0 0 2px white;
+  }
   
+  #new-quest:hover{
+    border-bottom: 2px solid #48b8d0;
+    box-shadow: 0 3px 2px #48b8d0;
+  }
   
 </style>

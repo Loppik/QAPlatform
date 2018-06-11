@@ -42,7 +42,7 @@ export default {
   grid-gap: 20px;
   grid-template-columns: 1fr 8fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  z-index: 100;
+  z-index: 200;
 }
 
 .sign{
