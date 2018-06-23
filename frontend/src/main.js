@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import Search from './Search.vue'
 import Menu from './Menu.vue'
 import MenuLog from './MenuLog.vue'
@@ -13,6 +14,8 @@ import Index from './Index.vue'
 import Question from './Question.vue'
 import QuestionA from './QuestionA.vue'
 import App from './App.vue'
+
+Vue.use(VueRouter)
 
 new Vue({
   el: '#cp',
@@ -79,9 +82,37 @@ new Vue({
   render: h => h(QAuth)
 })
 
+//  import Menu from "./Menu.vue";
+//  import MenuLog from "./MenuLog.vue";
+//  
+//  import FormLogin from "./FormLogin.vue";
+//  import FormReg from "./FormReg.vue";
+//  
+//  import Search from "./Search.vue";
+//  import Info from "./Info.vue";
+//  
+//  import QAuth from "./QAuth.vue";
+//  import QNonAuth from "./QNonAuth.vue";
+//
+//  import Footer from "./Footer.vue";
+
+
+const routes = [
+  { path: '/', component: Search },
+  { path: '/info/:id', component: Info },
+  { path: '/qa/:id', component: QAuth },
+  { path: '/qn', component: QNonAuth }
+]
+
+const router = new VueRouter({
+  routes
+})
+
 new Vue({
   el: '#app',
+  router,
   render: h => h(App)
 })
+
 
 Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';

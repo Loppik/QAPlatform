@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+<!--
     <div id="menu-log" v-if="reg">
       <h1 style="grid-column: 2; color: #fff;">{{ msg }}</h1>
       <div class="sign log-out">
@@ -9,12 +10,22 @@
         {{ profile }}
       </div>
     </div>
+-->
+    <router-link to="/qn" style="margin-top: 200px;">Перейти к Q - N</router-link>
+    <router-link to="/qa/adm" style="margin-top: 200px;">Перейти к Q - A</router-link>
+    <router-link to="/info/adm" style="margin-top: 200px;">Перейти к I</router-link>
+    <transition name="fade">
+    <router-view></router-view>
+    </transition>
     
+<!--
     <search v-if="page == 0" />
     <q-auth v-if="reg && page == 1" v-bind:nickname="nickname" v-bind:question="question" v-bind:answers="answers"/>
-    <q-non v-if="!reg && page == 1" v-bind:answers="answers" />
+    <q-non v-if="!reg && page == 1" v-bind:question="question" v-bind:answers="answers" />
     <info v-if="reg && page == 2" v-bind:nickname="nickname" v-bind:statistic="statistic" />
-    <foot />
+    
+-->
+    
     <div id="page-controller" @mouseover="show = true;" @mouseleave="show = false;">
       <transition name="fade">
         <div v-if="show">
@@ -31,6 +42,7 @@
     
     
     
+<!--
     <div id="menu" v-if="!reg">
       <h1 style="grid-column: 2; color: #fff;">{{ msg }}</h1>
       <div class="sign sign-in" @click="changeShowLog" v-if="!showR">
@@ -40,9 +52,10 @@
         {{ signup }}
       </div>
     </div>
+-->
     
     
-    
+    <foot />
     <transition name="fade">
       <div v-if="showR">
         <form-reg/>
@@ -72,7 +85,7 @@
   
   export default {
     name: 'app',
-    data () {
+    data: function() {
       return {
         msg: 'Q&A platform',
         signin: 'Sign in',
@@ -83,7 +96,7 @@
         logout: 'Log out',
         profile: 'Profile',
         
-        reg: true,
+        reg: !true,
         page: 0,
         nickname: 'admin',
         password: '',

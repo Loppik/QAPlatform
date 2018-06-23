@@ -18,16 +18,14 @@ export default {
   name: 'q-auth',
   data () {
     return {
-      answers:[],
-//      question: 'Example question????',
-//      nickname: 'NICKNAME',
+      answers: [{nickname:'sanyaShantyr', answer:'JAVA IS GTREAT'}, {nickname:'olegFedorovich', answer:'java is infamous language'}],
+      question: 'Example question????',
       userAnswer: '',
     }
   },
-  props: ['nickname', 'password', 'question',  'answers', 'statistic'],
   methods:{
     appendAnswer () { 
-                      this.answers.push({nickname:this.nickname, answer:this.userAnswer});
+                      this.answers.push({nickname:this.$route.params.id , answer:this.userAnswer});
                       this.userAnswer = null;
                     }
   }

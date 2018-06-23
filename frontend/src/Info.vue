@@ -4,7 +4,7 @@
       <div id="avatar">
       </div>
       <div class="nick">
-        {{ nickname }}
+        {{ $route.params.id }}
       </div>
     </div>
     <div class="activity">
@@ -21,12 +21,13 @@ export default {
   name: 'search',
   data () {
     return {
+      nickname: 'temp',
+      statistic: [215, 47, 3]
 //      yearActivity: 215,
 //      mounthActivity: 47,
 //      dayActivity: 3
     }
-  },
-  props: ['nickname', 'password', 'question', 'answers', 'bestAnswer', 'statistic'],
+  }
 }
 </script>
 
